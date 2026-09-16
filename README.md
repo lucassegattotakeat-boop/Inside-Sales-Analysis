@@ -1,31 +1,31 @@
 # Takeat Inside Sales Analysis
 
-Aplicação base em Next.js para dashboard de pipeline, conversão, SLA, atividades, tarefas atrasadas e leads perdidos.
+Dashboard em Next.js para análise do pipeline Inside Sales com visão de volume, conversão, SLA, atividade e leads perdidos.
 
-## Tecnologias
+## Status
+
+- Projeto base validado com build estável
+- Dashboard visual pronto
+- Rotas de autenticação e sync preparadas
+- Repositório publicado no GitHub
+
+## Stack
 
 - Next.js 16
 - TypeScript
 - Tailwind CSS
-- Vercel
 - Supabase
 - HubSpot API
+- Vercel
 
-## Como rodar localmente
-
-1. Instale as dependências:
+## Rodando localmente
 
 ```bash
 npm install
-```
-
-2. Inicie o servidor de desenvolvimento:
-
-```bash
 npm run dev
 ```
 
-3. Acesse:
+Acesso:
 
 ```text
 http://localhost:3000
@@ -33,30 +33,30 @@ http://localhost:3000
 
 ## Variáveis de ambiente
 
-Crie um arquivo `.env.local` com isso:
+Crie um arquivo `.env.local` com base no exemplo `.env.example`:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=your_project_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-HUBSPOT_ACCESS_TOKEN=your_hubspot_token
-CRON_SECRET=your_secret
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+HUBSPOT_ACCESS_TOKEN=your-hubspot-private-app-token
+CRON_SECRET=change-me
 ```
+
+## Rotas principais
+
+- `/` — dashboard principal
+- `/login` — login corporativo
+- `/api/sync` — sincronização do HubSpot
+- `/api/auth/login` — validação do e-mail corporativo
 
 ## Deploy na Vercel
 
-1. Conecte o repositório ao Vercel.
-2. Configure as variáveis de ambiente.
-3. Faça o deploy.
-4. Ative o cron job com o arquivo `vercel.json`.
-
-## Estrutura principal
-
-- `app/page.tsx` — dashboard principal
-- `app/api/sync/route.ts` — rota de sincronização
-- `vercel.json` — agendamento de cron
-- `README.md` — documentação
+1. Conecte o GitHub ao Vercel
+2. Configure as variáveis de ambiente
+3. Faça o deploy
+4. Ative o cron com `vercel.json`
 
 ## Observação
 
-Este projeto foi preparado como base funcional e visual para o painel solicitado. Para conectar com dados reais do HubSpot e Supabase, basta preencher as variáveis de ambiente e ajustar as integrações conforme a sua conta.
+A estrutura está pronta para receber os dados reais do HubSpot e do Supabase. Para funcionar em produção, basta inserir as credenciais reais do ambiente e rodar a sincronização inicial.
